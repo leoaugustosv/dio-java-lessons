@@ -30,11 +30,33 @@ public class DoublyLinkedList<T> {
         }
 
         lastNode = newNode;
-        nodeSize++;
+        this.nodeSize++;
     }
 
     public void remove(int index){
-        nodeSize--;
+
+        if (index > this.nodeSize){
+            throw new IndexOutOfBoundsException();
+        }
+
+        if (index == 0) {
+            firstNode = firstNode.getNext();
+            if(firstNode != null){
+                firstNode.setPrev(null);
+            }
+        }
+        else{
+            Node<T> pointer = getNode(index);
+            pointer.getPrev().setNext(pointer.getNext());
+            if (pointer != lastNode) {
+                pointer.getNext().setPrev(pointer.getPrev());                
+            }
+            else{
+                lastNode = pointer;
+            }
+        }
+
+        this.nodeSize--;
     }
 
 
