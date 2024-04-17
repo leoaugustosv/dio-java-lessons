@@ -105,7 +105,20 @@ public class DoublyLinkedList<T> {
         return pointer; 
     }
 
+    @Override
+    public String toString(){
+        String str = "";
 
+        Node<T> pointer = firstNode;
+
+        for (int i = 0; i < nodeSize; i++) {
+            str += "[Node{data="+pointer.getData()+"}]---->";
+            pointer = pointer.getNext();
+
+        }
+        str += "null";
+        return str;
+    }
 
 
 
