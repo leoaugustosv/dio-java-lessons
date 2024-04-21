@@ -47,7 +47,9 @@ public class CircularLinkedList<T> {
             for (int i = 0; i < index-1; i++) {
                 pointer = pointer.getNext();
             }
+            newNode.setNext(pointer.getNext());
             pointer.setNext(newNode);
+            
         }
 
         this.listSize++;
