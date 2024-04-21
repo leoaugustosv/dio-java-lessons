@@ -31,7 +31,7 @@ public class CircularLinkedList<T> {
     public void add(int index,T data){
         Node<T> newNode = new Node<>(data);
 
-        if(index > this.listSize){
+        if(index > this.size()){
             throw new IndexOutOfBoundsException("Index bigger than current list size!");
         }
 
@@ -110,6 +110,26 @@ public class CircularLinkedList<T> {
         return this.listSize != 0 ? false : true;
     }
 
+    @Override
+    public String toString() {
 
+        String str = "";
+
+        Node<T> pointer = this.tail;
+        for (int i = 0; i < this.size(); i++) {
+            str += "[Node{data="+pointer.getData()+"}]---->";
+            pointer = pointer.getNext();
+        }
+
+        str += "(returns to the start)";
+
+        if(this.isEmpty()){
+            str = "[Node{Empty List}]";
+        }
+        return str;
+    }
+
+
+    
 
 }
