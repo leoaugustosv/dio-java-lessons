@@ -4,6 +4,29 @@ public class CircularLinkedList<T> {
     private int listSize;
 
 
+    public T get(int index){
+        return this.getNode(index).getData();
+    }
+
+    private Node<T> getNode(int index){
+        if(this.isEmpty()){
+            throw new IndexOutOfBoundsException("Empty list!");
+        }
+
+        if(index==0){
+            return this.tail;
+        }
+        else{
+            Node<T> pointer = this.tail;
+
+            for (int i = 0; i < index && pointer != null; i++) {
+                pointer = pointer.getNext();
+            }
+            return pointer;
+        }
+    }
+
+
     public int size(){
         return this.listSize;
     }
@@ -13,6 +36,6 @@ public class CircularLinkedList<T> {
         return this.listSize != 0 ? false : true;
     }
 
-    
+
 
 }
