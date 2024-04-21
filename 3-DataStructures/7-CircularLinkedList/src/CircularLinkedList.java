@@ -3,6 +3,24 @@ public class CircularLinkedList<T> {
     private Node<T> tail;
     private int listSize;
 
+    
+
+    public void add(T data){
+        Node<T> newNode = new Node<>(data);
+
+        if(this.isEmpty()){
+            this.tail = newNode;
+            this.head = this.tail;
+            this.head.setNext(this.tail);
+        }
+        else{
+            newNode.setNext(this.head);
+            this.head.setNext(newNode);
+            this.tail = newNode;
+        }
+        this.listSize++;
+    }
+
     public void remove(int index){
         if(index > this.listSize){
             throw new IndexOutOfBoundsException("Index bigger than the list current size!");
