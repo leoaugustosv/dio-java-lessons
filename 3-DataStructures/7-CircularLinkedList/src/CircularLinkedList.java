@@ -20,7 +20,7 @@ public class CircularLinkedList<T> {
             this.head.setNext(this.tail);
         }
         else{
-            newNode.setNext(this.head);
+            newNode.setNext(this.tail);
             this.head.setNext(newNode);
             this.tail = newNode;
         }
