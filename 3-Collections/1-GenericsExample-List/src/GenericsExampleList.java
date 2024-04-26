@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class GenericsExampleList {
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public static void main(String[] args) throws Exception {
         //Without Generics
         List list = new ArrayList();
