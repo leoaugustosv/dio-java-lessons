@@ -21,7 +21,7 @@ public class GenericsExampleList {
             System.out.println("With Generics: "+element);
         }
 
-        //Iterating through list with Generics
+        //Iterating through list without Generics
         for(Object element: list){
             String str = element.toString();
             System.out.println("Without Generics: "+str);
