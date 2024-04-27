@@ -43,6 +43,9 @@ public class CatalogoLivros {
     }
 
     public List<Livro> exibirCatalogo(){
+        if (catalogoLivros.isEmpty()) {
+            System.out.println("ATENÇÃO: CATÁLOGO VÁZIO. Tente adicionar um novo livro!");
+        }
         return catalogoLivros;
     }
     

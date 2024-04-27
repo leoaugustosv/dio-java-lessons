@@ -7,6 +7,7 @@ public class Main {
         Livro livro3 = new Livro("Livro3", "Barbosa Siqueira", 2015);
         Livro livro4 = new Livro("Livro4", "Albuquerque Ramos", 2019);
 
+        CatalogoLivros catalogo2 = new CatalogoLivros();
 
         catalogo1.adicionarLivro(livro1);
         catalogo1.adicionarLivro(livro2);
@@ -17,7 +18,8 @@ public class Main {
 
         //System.out.println(catalogo1.pesquisarPorIntervaloAnos(2010, 2016));
         //System.out.println(catalogo1.pesquisarPorAutor("Machado de Assis"));
-        
+
         System.out.println(catalogo1.pesquisarPorTitulo("Livro2"));
+        System.out.println(catalogo2.exibirCatalogo());
     }
 }
