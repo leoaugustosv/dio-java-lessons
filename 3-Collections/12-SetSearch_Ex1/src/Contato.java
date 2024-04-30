@@ -41,7 +41,7 @@ public class Contato {
         if (obj == null)
             return false;
         if (getClass() != obj.getClass())
-            return false;
+            return false;  
         Contato other = (Contato) obj;
         if (nome == null) {
             if (other.nome != null)
