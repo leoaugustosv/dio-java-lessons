@@ -6,25 +6,15 @@ public class Main {
     public static void main(String[] args) throws Exception {
         List<Integer> listaNumeros = Arrays.asList(1, 2, 3, 4, 6, 7, 8, 9, 10, 12, 13, 14);
 
-        // FORMA 1
-        Consumer<Integer> imprimirNumeroPar = num -> {
-            if (num % 2 == 0) {
-                System.out.println(num);
-            }
-        };
+        // Consumer<Integer> imprimirNumeroPar = num -> {
+        // if (num % 2 == 0) {
+        // System.out.println(num);
+        // }
+        // };
 
-        listaNumeros.stream().forEach(imprimirNumeroPar);
+        listaNumeros.stream()
+                .filter(n -> n % 2 == 0)
+                .forEach(System.out::println);
 
-        // FORMA 2
-        listaNumeros.stream().forEach(new Consumer<Integer>() {
-
-            @Override
-            public void accept(Integer t) {
-                if (t % 2 == 0) {
-                    System.out.println(t);
-                }
-            }
-
-        });
     }
 }
